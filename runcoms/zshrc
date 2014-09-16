@@ -10,5 +10,27 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+if [[ -s "${ZDOTDIR:-$HOME}/.zshrc_local" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zshrc_local"
+fi
 
+# Extra aliases
+
+alias dus='du -hs'
+
+# Some useful functions
+
+function svnurl {
+  url=`svn info | awk '/^URL:/ { print $2 }'`
+  if [[ "$1" =~ "b" ]] || [[ "$1" =~ "t" ]]; then
+    if [[ "$1" =~ "b" ]]; then
+      url="`dirname $url`/branches"
+    else
+      url="`dirname $url`/tags"
+    fi
+    if [[ "$1" =~ "l" ]]; then
+      url="$url/"`svn ls $url | tail -n 1`
+    fi
+  fi
+  echo $url
+}

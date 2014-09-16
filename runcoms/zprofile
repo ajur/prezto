@@ -17,8 +17,12 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+if (( ! $+commands[subl] )); then
+  export VISUAL='subl -w'
+else
+  export VISUAL=$EDITOR
+fi
 export PAGER='less'
 
 #
