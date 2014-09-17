@@ -10,8 +10,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# change prompt for non remote hosts
-if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" ]] && [[ -n "$SSH_TTY" ]]; then
+# change prompt for remote hosts
+if [[ -n "$SSH_TTY" ]]; then
   PROMPT="%F{magenta}%M $PROMPT"
 fi
 
