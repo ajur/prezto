@@ -10,6 +10,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# change prompt for non remote hosts
+if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" ]] && [[ -n "$SSH_TTY" ]]; then
+  PROMPT="%F{magenta}%M $PROMPT"
+fi
+
+# Run local rc file if present
 if [[ -s "${ZDOTDIR:-$HOME}/.zshrc_local" ]]; then
   source "${ZDOTDIR:-$HOME}/.zshrc_local"
 fi
