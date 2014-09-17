@@ -1,3 +1,9 @@
+> **Note** this is forked and slightly modified version of Prezto,
+> that suits my needs and usecases. If you are searching for original repo,
+> visit [Sorin Ionescu repo](https://github.com/sorin-ionescu/prezto).
+> 
+> It is also used by my [dotfiles](https://github.com/ajur/dotfiles) installer.
+
 Prezto — Instantly Awesome Zsh
 ==============================
 
@@ -17,7 +23,7 @@ version is 4.3.11.
 
   2. Clone the repository:
 
-        git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+        git clone --recursive https://github.com/ajur/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
   3. Create a new Zsh configuration by copying the Zsh configuration files
      provided:
