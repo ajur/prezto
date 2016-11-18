@@ -14,6 +14,10 @@ fi
 # Add zsh-completions to $fpath.
 fpath=("${0:h}/external/src" $fpath)
 
+if [[ -d /Applications/Docker.app/Contents/Resources/etc ]]; then
+    fpath=(/Applications/Docker.app/Contents/Resources/etc $fpath)
+fi
+
 # Load and initialize the completion system ignoring insecure directories.
 autoload -Uz compinit && compinit -i
 
