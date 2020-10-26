@@ -46,6 +46,7 @@ alias gc='git commit --verbose'
 alias gca='git commit --verbose --all'
 alias gcm='git commit --message'
 alias gco='git checkout'
+alias gcb='git checkout -b'
 # alias gcO='git checkout --patch'
 # alias gcf='git commit --amend --reuse-message HEAD'
 # alias gcF='git commit --verbose --amend'
@@ -59,6 +60,7 @@ alias gcR='git reset "HEAD^"'
 # Conflict (C)
 alias gCl='git status | sed -n "s/^.*both [a-z]*ed: *//p"'
 alias gCa='git add $(gCl)'
+alias gaa='git add .'
 # alias gCe='git mergetool $(gCl)'
 # alias gCo='git checkout --ours --'
 # alias gCO='gCo $(gCl)'
@@ -79,6 +81,7 @@ alias gf='git fetch'
 alias gfc='git clone'
 alias gfm='git pull'
 alias gfr='git pull --rebase'
+alias gpp='git pull --prune'
 
 # Grep (g)
 # alias gg='git grep'
@@ -112,7 +115,7 @@ alias glmd='git log --grep="Merge pull request" master..develop --pretty=format:
 alias glc='git shortlog --summary --numbered'
 
 # Merge (m)
-# alias gm='git merge'
+alias gm='git merge'
 # alias gmC='git merge --no-commit'
 # alias gmF='git merge --no-ff'
 # alias gma='git merge --abort'
@@ -131,7 +134,7 @@ alias gpA='git push --all && git push --tags'
 # alias gr='git rebase'
 # alias gra='git rebase --abort'
 # alias grc='git rebase --continue'
-# alias gri='git rebase --interactive'
+alias gri='git rebase --interactive'
 # alias grs='git rebase --skip'
 
 # Remote (R)
